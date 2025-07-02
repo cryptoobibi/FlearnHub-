@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlearnHub Launch Countdown</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .coming-soon h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--orange);
+    }
+
+    .countdown {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-top: 2rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      background: var(--green);
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="coming-soon">
+    <h1>🚀 COMING SOON</h1>
+    <p>We're launching something powerful for aspiring traders.</p>
+    <div class="countdown" id="countdown"></div>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </div>
+
+  <script>
+    const launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 30);
+    const countdown = document.getElementById('countdown');
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = launchDate.getTime() - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        countdown.innerHTML = "We're Live! 🎉";
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>

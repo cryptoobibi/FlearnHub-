@@ -1,0 +1,178 @@
+:root {
+  --blue: #2c4ecc;
+  --gray: #b4b4b4;
+  --orange: #ff7425;
+  --green: #1cb06a;
+  --dark: #0e0e0e;
+  --light: #f9f9f9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+header {
+  background: white;
+  color: var(--dark);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 8px;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #888;
+}
+
+.hamburger {
+  font-size: 2rem;
+  display: none;
+  cursor: pointer;
+  color: var(--dark);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--orange);
+}
+
+.hero {
+  background: linear-gradient(to right, var(--green), var(--blue));
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: var(--orange);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #e65c0c;
+}
+
+.start-btn {
+  background: var(--green);
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.start-btn:hover {
+  background: #179f5f;
+}
+
+.section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.programs .card {
+  background: var(--gray);
+  padding: 1.5rem;
+  margin: 1rem auto;
+  border-radius: 10px;
+  max-width: 500px;
+  color: #333;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.news-section iframe {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.contact {
+  background: var(--blue);
+  color: white;
+}
+
+footer {
+  background: #111;
+  color: #ccc;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    width: 100%;
+    display: none;
+    border-top: 1px solid #eee;
+    z-index: 10;
+  }
+
+  nav.open {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+}
